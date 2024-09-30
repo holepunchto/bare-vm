@@ -2,22 +2,18 @@ const test = require('brittle')
 const vm = require('.')
 
 test('createContext + runInContext', (t) => {
-  t.plan(2)
+  globalThis.x = 84
 
-  const x = undefined
-  const code = 'x = 42'
   const context = vm.createContext()
 
-  const result = vm.runInContext(code, context)
+  context.x = 42
+
+  const result = vm.runInContext('globalThis.x', context)
 
   t.is(result, 42)
-  t.absent(x)
-
-  t.teardown(() => context.destroy())
+  t.is(globalThis.x, 84)
 })
 
 test('runInNewContext', (t) => {
   t.is(vm.runInNewContext('x = 42'), 42)
-
-  // TODO: teardown
 })

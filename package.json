@@ -1,0 +1,32 @@
+{
+  "name": "bare-vm",
+  "version": "0.0.1",
+  "description": "Isolated V8 contexts for Bare",
+  "exports": {
+    ".": "./index.js",
+    "./package": "./package.json"
+  },
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "standard && bare test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-vm.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-vm/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-vm#readme",
+  "dependencies": {
+    "bare-realm": "^1.0.4"
+  },
+  "devDependencies": {
+    "brittle": "^3.7.0",
+    "standard": "^17.1.2"
+  }
+}

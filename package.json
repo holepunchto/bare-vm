@@ -1,7 +1,7 @@
 {
   "name": "bare-vm",
   "version": "0.0.1",
-  "description": "Isolated V8 contexts for Bare",
+  "description": "Isolated JavaScript contexts for Bare",
   "exports": {
     ".": "./index.js",
     "./package": "./package.json"
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/holepunchto/bare-vm#readme",
   "dependencies": {
-    "bare-realm": "^1.0.4"
+    "bare-realm": "^1.0.5"
   },
   "devDependencies": {
     "brittle": "^3.7.0",

@@ -1,6 +1,6 @@
 # bare-vm
 
-Isolated V8 contexts for Bare. Based on [bare-realm](https://github.com/holepunchto/bare-realm).
+Isolated JavaScript contexts for Bare.
 
 ```
 npm i bare-vm

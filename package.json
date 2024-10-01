@@ -1,6 +1,6 @@
 {
   "name": "bare-vm",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Isolated JavaScript contexts for Bare",
   "exports": {
     ".": "./index.js",

@@ -2,7 +2,8 @@ const Realm = require('bare-realm')
 
 const realms = new WeakMap()
 
-const createContext = exports.createContext = function createContext () {
+// prettier-ignore
+const createContext = exports.createContext = function createContext() {
   const realm = new Realm()
 
   const context = realm.evaluate('globalThis')
@@ -12,7 +13,8 @@ const createContext = exports.createContext = function createContext () {
   return context
 }
 
-const runInContext = exports.runInContext = function runInContext (code, context, opts = {}) {
+// prettier-ignore
+const runInContext = exports.runInContext = function runInContext(code, context, opts = {}) {
   const {
     filename,
     offset = opts.lineOffset // For Node.js compatibility
@@ -23,6 +25,6 @@ const runInContext = exports.runInContext = function runInContext (code, context
   return realm.evaluate(code, { filename, offset })
 }
 
-exports.runInNewContext = function runInNewContext (code, opts) {
+exports.runInNewContext = function runInNewContext(code, opts) {
   return runInContext(code, createContext(), opts)
 }

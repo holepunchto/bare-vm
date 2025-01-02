@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "description": "Isolated JavaScript contexts for Bare",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
     "./package": "./package.json"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
-    "test": "standard && bare test.js"
+    "test": "prettier . --check && bare test.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "brittle": "^3.7.0",
-    "standard": "^17.1.2"
+    "prettier": "^3.4.2",
+    "prettier-config-standard": "^7.0.0"
   }
 }

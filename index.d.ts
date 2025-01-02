@@ -1,13 +1,13 @@
-export function createContext(): Record<any, any>
+export function createContext(): Record<string | number | symbol, unknown>
 
 export function runInContext(
   code: string,
-  context: Record<any, any>,
+  context: Record<string | number | symbol, unknown>,
   opts?: {
     filename?: string
     offset?: number
   }
-): any
+): unknown
 
 export function runInNewContext(
   code: string,
@@ -15,4 +15,4 @@ export function runInNewContext(
     filename?: string
     offset?: number
   }
-): any
+): unknown

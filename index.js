@@ -2,7 +2,7 @@ const Realm = require('bare-realm')
 
 const realms = new WeakMap()
 
-const createContext = (exports.createContext = function createContext() {
+function createContext() {
   const realm = new Realm()
 
   const context = realm.evaluate('globalThis')
@@ -10,13 +10,11 @@ const createContext = (exports.createContext = function createContext() {
   realms.set(context, realm)
 
   return context
-})
+}
 
-const runInContext = (exports.runInContext = function runInContext(
-  code,
-  context,
-  opts = {}
-) {
+exports.createContext = createContext
+
+function runInContext(code, context, opts = {}) {
   const {
     filename,
     offset = opts.lineOffset // For Node.js compatibility
@@ -25,8 +23,12 @@ const runInContext = (exports.runInContext = function runInContext(
   const realm = realms.get(context)
 
   return realm.evaluate(code, { filename, offset })
-})
+}
 
-exports.runInNewContext = function runInNewContext(code, opts) {
+exports.runInContext = runInContext
+
+function runInNewContext(code, opts) {
   return runInContext(code, createContext(), opts)
 }
+
+exports.runInNewContext = runInNewContext

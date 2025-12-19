@@ -1,18 +1,14 @@
-export function createContext(): Record<string | number | symbol, unknown>
+interface Context {
+  [key: string | number | symbol]: unknown
+}
 
-export function runInContext(
-  code: string,
-  context: Record<string | number | symbol, unknown>,
-  opts?: {
-    filename?: string
-    offset?: number
-  }
-): unknown
+export function createContext(): Context
 
-export function runInNewContext(
-  code: string,
-  opts?: {
-    filename?: string
-    offset?: number
-  }
-): unknown
+interface RunOptions {
+  filename?: string
+  offset?: number
+}
+
+export function runInContext(code: string, context: Context, options?: RunOptions): unknown
+
+export function runInNewContext(code: string, options?: RunOptions): unknown

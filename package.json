@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Isolated JavaScript contexts for Bare",
   "exports": {
+    "./package": "./package.json",
     ".": {
       "types": "./index.d.ts",
       "default": "./index.js"
-    },
-    "./package": "./package.json"
+    }
   },
   "files": [
     "index.js",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/holepunchto/bare-vm#readme",
   "dependencies": {
-    "bare-realm": "^1.0.5"
+    "bare-realm": "^2.0.0"
   },
   "devDependencies": {
     "brittle": "^3.7.0",

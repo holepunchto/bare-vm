@@ -17,10 +17,10 @@ vm.runInContext('x = 40; x += 2', context) // 42
 vm.runInNewContext('x = 40; x += 2') // 42
 ```
 
-## License
-
-Apache-2.0
-
 ## API
 
 See the [`bare-vm` reference](https://docs.pears.com/reference/bare/modules/bare-vm).
+
+## License
+
+Apache-2.0
